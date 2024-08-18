@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ea74c6c8;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+        background-color:rgb(97, 11, 81);
+        height: 100px;
+        width: 1850px;
+        color:pink;
+        font-style:italic;
+        line-height: 100px;
+        font-size: 30px;
+        margin:2px;
+        text-align: center;
+        font-family:cursive;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💚 HEARTY NIBBLES 💚</h1>
+    </header><br><br>
+    <div id="con">
+
+    </div>
+    <script>
+        let data=JSON.parse(localStorage.getItem("Product Id"));
+        let pro=document.getElementById('con');
+        for(item of data){
+            pro.innerHTML += `
+                <div class="snack-item">
+                    <img src="${item.image}" alt="${item.name}" height="150px" weight="150px">
+                    <h3>${item.name}</h3>
+                    <p>${item.quantity}</p>
+                    <p>price: ${item.price}</p>
+                    <button onclick="data(${item.id})">buy now</button>
+                </div>
+            ` 
+        }
+        
+    </script>
+    <footer style="height:50px; background-color:rgb(97, 11, 81);text-align: center; padding-top: 5px;  color: pink;">
+        <p>&copy; copy rights reserved @ 2024</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hearty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ea74c6c8;
+            margin: 0;
+            padding: 20px;
+        }
+        #div1 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .snack-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .snack-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .snack-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .snack-item button {
+            background-color: rgb(97, 11, 81);
+            border: none;
+            border-radius: 0 0 10px 10px;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .snack-item button:hover {
+            background-color: #cd328c;
+        }
+        .snack-item h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .snackk-item p {
+            color: #777;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+        header {
+        background-color:rgb(97, 11, 81);
+        height: 100px;
+        width: 1850px;
+        color:pink;
+        font-style:italic;
+        line-height: 100px;
+        font-size: 30px;
+        margin:2px;
+        text-align: center;
+        font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💚 HEARTY NIBBLES 💚</h1>
+    </header><br><br>
+    <div id="btn">
+        <button>
+            click
+        </button>
+    </div>
+
+    <div id="div1"></div>
+    <script>
+        let text = document.getElementById('div1');
+        let obj = [
+            {
+                id: 0,
+                name: "Lays",
+                quantity: "Pack of 6",
+                price: 150,
+                description: "Most loved flavors!!",
+                image: "https://www.mishry.com/wp-content/uploads/2021/02/Lays-Chips-Flavors.jpg",
+            },
+            {
+                id: 1,
+                name: "Bingo",
+                quantity: "Pack of 5",
+                price: 100,
+                description: "Enjoy the Taste!!",
+                image: "https://tse2.mm.bing.net/th?id=OIP.lddfPU3q_ZL2hb4ukUnC1QHaEQ&pid=Api&P=0&h=180",
+            },
+            {
+                id: 2,
+                name: "Kurkure",
+                quantity: "Pack of 5",
+                price: 120,
+                description: "flaors of 5",
+                image: "https://tse2.mm.bing.net/th?id=OIP.gTG-FoQYAZZnaiSZaeshvwHaFL&pid=Api&P=0&h=180",
+            },
+            {
+                id: 3,
+                name: "doritos",
+                quantity: "pack of 5",
+                price: 140,
+                description: "enjoy the flavors and spices",
+                image: "https://tse4.mm.bing.net/th?id=OIP.egG-1WZ4jf7-9Jh_qeDnBAHaHa&pid=Api&P=0&w=300&h=300",
+            },
+            {
+                id: 4,
+                name: "pringles",
+                quantity: "pack of 3",
+                price: 290,
+                description: "hot spices!!",
+                image: "https://tse1.mm.bing.net/th?id=OIP.Pyh4c3Ue394rr5Y3WbVpnwHaHM&pid=Api&P=0&h=180",
+            },
+            {
+                id: 5,
+                name: "Frerrero",
+                quantity: "pack of 1",
+                price: 300,
+                description: "the sweetest",
+                image:" https://tse2.mm.bing.net/th?id=OIP.VI5qTTXH7SCWDghb9nKJxwHaE8&pid=Api&P=0&h=180",
+            },
+            {
+                id: 6,
+                name: "Dairy Milk",
+                quantity: "4 flavors",
+                price: 350,
+                description: "celebrate with sweet",
+                image: "https://tse3.mm.bing.net/th?id=OIP.eJ1-LmqdHKwxfMfK41tPkAHaEh&pid=Api&P=0&h=180",
+            },
+            {
+                id: 7,
+                name: "hershey's nugguts",
+                quantity: "pack of 1",
+                price: 350,
+                description: "nugguts with sweet",
+                image: "https://tse1.mm.bing.net/th?id=OIP.48kibolWvEJuc_yOqLbyigHaHa&pid=Api&P=0&h=180",
+            },
+            {
+                id: 8,
+                name: "Green & Blacks",
+                quantity: "pack of 5 ",
+                price: 560,
+                description: "fresh and dark",
+                image: "https://tse4.mm.bing.net/th?id=OIP.moPC6FA1HVTrzz3FHC5P1gHaEK&pid=Api&P=0&h=180",
+            },
+            {
+                id: 9,
+                name: "origins",
+                quantity: "1",
+                price: 400,
+                description: "every bite fill with sweet ",
+                image: "https://tse1.mm.bing.net/th?id=OIP.IIVg9mpaEshrp-49p3g7xAHaE8&pid=Api&P=0&h=180",
+            },
+            {
+                id: 10,
+                name: "Good day",
+                quantity: "pack of 3",
+                price: 100,
+                description: "start the day with good day",
+                image: "https://tse3.mm.bing.net/th?id=OIP.Oa6LceDlCvlY3mDNg0ujsgHaEl&pid=Api&P=0&h=180",
+            },
+            {
+                id: 11,
+                name: "malkist",
+                quantity: "pack of 3",
+                price: 200,
+                description: "malkist crackers",
+                image: "https://tse1.mm.bing.net/th?id=OIP.2WgZwQUkbEyNneHUvZvpLQHaI7&pid=Api&P=0&h=180",
+            },
+            {
+                id: 12,
+                name: "oreo",
+                quantity: "1 pack",
+                price: 120,
+                description: "biscuits with cadbury",
+                image: "https://tse2.mm.bing.net/th?id=OIP.0mpdhWdU9Xb4Vza3Wqt_HQHaFF&pid=Api&P=0&h=180",
+            },
+            {
+                id: 13,
+                name: "formlite",
+                quantity: "pack of 3",
+                price: 300,
+                description: "choco chips with bites",
+                image: "https://tse4.mm.bing.net/th?id=OIP.qoSNRz1MXsYlcKPghAPaJAHaFw&pid=Api&P=0&h=180",
+            },
+            {
+                id: 14,
+                name: "parle G",
+                quantity: "pack of 1",
+                price: 100,
+                description: "enjoy your snacks",
+                image: "https://tse3.mm.bing.net/th?id=OIP.3uXx432h9BewFFCw2jU20QHaHa&pid=Api&P=0&h=180",
+            },
+        ];
+        const body = document.body;
+let mybtn=document.getElementById('btn');
+body.addEventListener("click", () => {
+ 
+  if (body.style.backgroundColor === "black" || body.style.backgroundColor === "white") {
+   
+    body.style.backgroundColor = "#ea74c6c8";
+  } else {
+    body.style.backgroundColor = "black";
+  }
+});
+        for(item of obj){
+            div1.innerHTML += `
+                <div class="snack-item">
+                    <img src="${item.image}" alt="${item.name}" height="150px" weight="150px">
+                    <h3>${item.name}</h3>
+                    <p>${item.quantity}</p>
+                    <p>price: ${item.price}</p>
+                    <button onclick="data(${item.id})">Add to cart</button>
+                </div>
+            `
+        }
+        let arr=[];
+        if(localStorage.length>0){
+            arr=JSON.parse(localStorage.getItem('Product Id'))
+        }
+        let data = (id) => {
+           arr.push(obj[id-1])
+           console.log(arr);
+           localStorage.setItem("Product Id",JSON.stringify(arr));
+        }
+    </script>
+    <br><br>
+    <footer style="height:50px; background-color:rgb(97, 11, 81);text-align: center; padding-top: 5px;  color: pink;">
+        <p>&copy; copy rights reserved @ 2024</p>
+    </footer>
+</body>
+</html>
